@@ -5,11 +5,18 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+    config.hostmanager.enabled = true
+    config.hostmanager.manage_host = true
+    config.hostmanager.ignore_private_ip = false
+    config.hostmanager.include_offline = true
     config.vm.box = "ubuntu/trusty64"
+
+    config.vm.hostname = "symfony.local"
 
     # Forward ports to Apache and MySQL
     config.vm.network "forwarded_port", guest: 80, host: 8888
     config.vm.network "forwarded_port", guest: 3306, host: 8889
+
 
 	config.vm.provision "shell", path: "provision.sh"
 

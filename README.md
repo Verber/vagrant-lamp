@@ -15,6 +15,7 @@ Requirements
 ------------
 * VirtualBox <http://www.virtualbox.com>
 * Vagrant <http://www.vagrantup.com>
+* vagrant plugin install vagrant-hostmanager
 * Git <http://git-scm.com/>
 
 Usage
