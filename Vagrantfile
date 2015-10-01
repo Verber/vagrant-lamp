@@ -19,6 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 
 	config.vm.provision "shell", path: "provision.sh"
+	config.vm.network :private_network, ip: '192.168.42.42'
 
   # config.vm.provider "virtualbox" do |vb|
   #   # Don't boot with headless mode
